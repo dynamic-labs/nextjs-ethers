@@ -20,6 +20,19 @@ export default function RootLayout({
       <DynamicContextProvider
         settings={{
           environmentId: "4e598b41-f388-489b-a0b3-d24064b1d1ed",
+          evmNetworks: [{
+            blockExplorerUrls: ['https://etherscan.io/'],
+            chainId: 369,
+            name: 'Pulse',
+            iconUrls: ['https://app.dynamic.xyz/assets/networks/eth.svg'],
+            nativeCurrency: { decimals: 18, name: 'Pulse', symbol: 'PLS' },
+            networkId: 369,
+            privateCustomerRpcUrls: [
+              'https://mainnet.infura.io/v3/your-api-key',
+            ],
+            rpcUrls: ['https://cloudflare-eth.com'],
+            vanityName: 'Ethereum'
+        }],
         }}
       >
         <body className={inter.className}>{children}</body>
