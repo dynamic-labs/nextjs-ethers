@@ -1,7 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { DynamicContextProvider } from "../lib/dynamic";
+import {
+  DynamicContextProvider,
+  EthereumWalletConnectors,
+  AlgorandWalletConnectors,
+  SolanaWalletConnectors,
+  FlowWalletConnectors,
+  StarknetWalletConnectors,
+  CosmosWalletConnectors
+} from "../lib/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +41,14 @@ export default function RootLayout({
             rpcUrls: ['https://cloudflare-eth.com'],
             vanityName: 'Ethereum'
         }],
+        walletConnectors: [
+          EthereumWalletConnectors,
+          AlgorandWalletConnectors,
+          SolanaWalletConnectors,
+          FlowWalletConnectors,
+          StarknetWalletConnectors,
+          CosmosWalletConnectors
+        ]
         }}
       >
         <body className={inter.className}>{children}</body>
