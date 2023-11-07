@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { DynamicContextProvider } from "../lib/dynamic";
+import { DynamicContextProvider, SolanaWalletConnectors, EthereumWalletConnectors, FlowWalletConnectors, CosmosWalletConnectors, BloctoEvmWalletConnectors, AlgorandWalletConnectors, StarknetWalletConnectors, MagicWalletConnectors } from "../lib/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,20 +19,8 @@ export default function RootLayout({
     <html lang="en">
       <DynamicContextProvider
         settings={{
-          environmentId: "4e598b41-f388-489b-a0b3-d24064b1d1ed",
-          evmNetworks: [{
-            blockExplorerUrls: ['https://etherscan.io/'],
-            chainId: 369,
-            name: 'Pulse',
-            iconUrls: ['https://app.dynamic.xyz/assets/networks/eth.svg'],
-            nativeCurrency: { decimals: 18, name: 'Pulse', symbol: 'PLS' },
-            networkId: 369,
-            privateCustomerRpcUrls: [
-              'https://mainnet.infura.io/v3/your-api-key',
-            ],
-            rpcUrls: ['https://cloudflare-eth.com'],
-            vanityName: 'Ethereum'
-        }],
+          environmentId: "f0b977d0-b712-49f1-af89-2a24c47674da",
+          walletConnectors: [EthereumWalletConnectors, FlowWalletConnectors, CosmosWalletConnectors, BloctoEvmWalletConnectors, AlgorandWalletConnectors, StarknetWalletConnectors, MagicWalletConnectors, SolanaWalletConnectors]
         }}
       >
         <body className={inter.className}>{children}</body>
