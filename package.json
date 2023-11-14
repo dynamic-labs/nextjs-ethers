@@ -1,5 +1,5 @@
 {
-  "name": "next-ethers",
+  "name": "@dynamic-labs/next-ethers",
   "version": "0.1.0",
   "private": true,
   "scripts": {
