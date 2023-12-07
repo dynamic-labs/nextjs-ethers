@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import {
+  EthersExtension,
   DynamicContextProvider,
   SolanaWalletConnectors,
   EthereumWalletConnectors,
@@ -40,6 +41,7 @@ export default function RootLayout({
             MagicWalletConnectors,
             SolanaWalletConnectors,
           ],
+          walletConnectorExtensions: [EthersExtension],
         }}
       >
         <body className={inter.className}>{children}</body>
